@@ -43,7 +43,7 @@ void sensor_task(void* pvParameters){
         vl53l0x->range = sensor_read(vl53l0x);
         // ESP_LOGI( TAG, "Range: %d\r\n", range );  
         while (vl53l0x->range <= vl53l0x->max_range && vl53l0x->range > 20 ){
-            ESP_LOGI( TAG, "Range: %d\r\n", vl53l0x->range );  
+            // ESP_LOGI( TAG, "Range: %d\r\n", vl53l0x->range );  
             
             // ESP_LOGI( TAG, "Console log %d", filter );  
             if (++filter > 3){

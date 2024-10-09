@@ -13,6 +13,7 @@
 
 #include "app.h"
 #include "http_client_handler.h"
+#include "sys_config.h"
 
 long long Tick = 0;
 long long previousTick = 0;
@@ -77,7 +78,7 @@ void http_get_tick()
     char local_response_buffer[2048] = {0};
 
     esp_http_client_config_t config = {
-        .url = "http://192.168.0.101:3001/getTick",
+        .url = "http://192.168.7.11:3001/getTick",
         .method = HTTP_METHOD_GET,
         .user_data = local_response_buffer,
         .event_handler = _http_event_handler,
@@ -107,7 +108,7 @@ void http_get_tick()
 void http_post(void *post_data)
 {
     esp_http_client_config_t config_post = {
-        .url = "http://192.168.0.101:3001/send-data",
+        .url = SERVER_IP "/send-data",
         .method = HTTP_METHOD_POST,
         .cert_pem = NULL,
         .event_handler = _http_event_handler};

@@ -285,12 +285,12 @@ void wifi_mesh_start()
     {
         vTaskDelay(50 / portTICK_PERIOD_MS);
     }
-    // http_get_tick();
-    // while (!is_tick_be_get)
-    // {
-    //     printf("Waiting Get Tick \n");
-    //     vTaskDelay(50 / portTICK_PERIOD_MS);
-    // }
+    vTaskDelay(1500 / portTICK_PERIOD_MS);
+    http_get_tick();
+    while (!is_tick_be_get)
+    {
+        vTaskDelay(50 / portTICK_PERIOD_MS);
+    }
     esp_wifi_disconnect();
     mesh_app_start();
 }

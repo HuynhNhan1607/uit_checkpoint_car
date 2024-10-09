@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "checkpoint_self",
-    "project_version":    "c05b815-dirty",
+    "project_version":    "ca8115a-dirty",
     "project_path":       "D:/Project/uit_car_checkpoint",
     "idf_path":           "D:/IDF/esp-idf/v5.2.2/esp-idf",
     "build_dir":          "D:/Project/uit_car_checkpoint/build",

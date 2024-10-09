@@ -38,12 +38,13 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t e
     case WIFI_EVENT_STA_CONNECTED:
         xEventGroupSetBits(s_wifi_event_group, CONNECTED_BIT);
         ESP_LOGI(TAG_WIFI, "Connected to AP");
-        is_wifi_connect = true;
+        // is_wifi_connect = true;
         break;
     case IP_EVENT_STA_GOT_IP:
     {
         ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
         ESP_LOGI(TAG_WIFI, "got ip:" IPSTR, IP2STR(&event->ip_info.ip));
+        xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
     }
     break;
     default:
